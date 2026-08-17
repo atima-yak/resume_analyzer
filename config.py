@@ -1,4 +1,4 @@
-JOB_TITLE = "AI & Data Solution Intern"
+JOB_TITLE = "AI & Data Solution"
 
 JOB_DESCRIPTION = """
 หน้าที่รับผิดชอบ:

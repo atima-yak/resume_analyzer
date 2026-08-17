@@ -50,17 +50,12 @@ def extract_text_from_pdf(file_path: str) -> str:
     if not full_text:
         raise ValueError(
             "ไม่สามารถแกะข้อความจาก PDF ได้ อาจเป็นไฟล์ scan/รูปภาพที่ไม่มี text layer "
-            "(ในระบบจริงควรเพิ่ม OCR fallback เช่น pytesseract)"
         )
 
     return full_text
 
 
 def extract_text_from_bytes(file_bytes: bytes) -> str:
-    """
-    เวอร์ชันสำหรับรับไฟล์เป็น bytes โดยตรง (ใช้ตอนรับไฟล์ผ่าน FastAPI upload
-    ซึ่งไม่ได้ถูกเซฟลง disk ก่อน)
-    """
     with pdfplumber.open(io.BytesIO(file_bytes)) as pdf:
         full_text = _pages_to_text(pdf)
 
