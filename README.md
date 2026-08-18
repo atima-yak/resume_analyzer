@@ -126,6 +126,6 @@ python -m uvicorn api:app --reload
 ## แนวคิดการออกแบบ
 
 - **แยก concern เป็นโมดูล** — parsing, LLM logic, API layer, config แยกไฟล์กันชัดเจน
-- **Prompt Engineering ** — JD ถูกฝังในระบบ prompt ตรง ๆ เพราะรองรับตำแหน่งเดียว
+- **Prompt Engineering** — JD ถูกฝังในระบบ prompt ตรง ๆ เพราะรองรับตำแหน่งเดียว
 - **Fail-fast** — เช็ค API key ตั้งแต่ตอน import โมดูล ไม่ปล่อยให้พังตอนเรียก API จริง
 - **Exception translation** — แปลง exception เฉพาะทางของ LLM provider ให้เป็น `ValueError` กลางๆ ที่ทั้งระบบเข้าใจตรงกัน
