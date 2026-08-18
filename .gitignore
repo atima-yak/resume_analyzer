@@ -2,3 +2,4 @@
 /results
 /venv
 .env
+.DS_Store
